@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "microservice-ecommerce"
+version = "0.1.0"
+description = ""
+authors = ["renaldyhidayatt <renaldyhidayatt@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+skip = "^0.1.0"
+python-multipart = "^0.0.17"
+fastapi = "^0.115.5"
+python-keycloak = "^4.7.2"
+uvicorn = "^0.32.1"
+aiokafka = "^0.12.0"
+opentelemetry-api = "^1.28.2"
+opentelemetry-sdk = "^1.28.2"
+opentelemetry-instrumentation-fastapi = "^0.49b2"
+opentelemetry-exporter-prometheus = "^0.49b2"
+opentelemetry-exporter-jaeger = "^1.21.0"
+python-jose = "^3.3.0"
+opentelemetry-exporter-otlp = "^1.28.2"
+opentelemetry-instrumentation-aiokafka = "^0.49b2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
