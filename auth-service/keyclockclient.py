@@ -33,6 +33,8 @@ class KeycloakClient:
         except Exception as e:
             raise HTTPException(status_code=400, detail=f"Error during login: {str(e)}")
 
+
+
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
 

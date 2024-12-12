@@ -1,4 +1,4 @@
-## Microservice Ecommerce
+## Monolith Ecommerce
 
 
 ### Jaeger UI in grafana
