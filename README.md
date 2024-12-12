@@ -27,7 +27,7 @@ This project is a monolithic e-commerce application that integrates multiple ser
 ## Installation
 ```bash
 # Clone the repository
-$ git clone https://github.com/your-repo/monolith-ecommerce.git
+$ git clone https://github.com/MamangRust/monolith-ecommerce-example.git
 $ cd monolith-ecommerce
 
 # Start the application
