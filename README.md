@@ -1,19 +1,91 @@
-## Monolith Ecommerce
+# Monolith E-commerce Project - README
 
+## Overview
+This project is a monolithic e-commerce application that integrates multiple service using **FastAPI** and **SQLAlchemy**. It leverages **PostgreSQL** as the database, and the architecture is containerized with **Docker Compose** for seamless setup and scaling. The system includes key components such as authentication, order processing, and product management, with observability tools for monitoring and debugging.
 
+## Features
+- **Authentication**: Login and verify tokens using Keycloak.
+- **Product Management**: Get all products.
+- **Order Management**: Create Order and send emails to the customer to apache kafka
+- **Email Notifications**: Asynchronous email sending for transactional updates.
+- **API Gateway**: A centralized entry point for all services.
+- **Observability**: Integrated tools like Prometheus, Grafana, Jaeger, and OpenTelemetry.
+
+---
+
+## Tech Stack
+- **Backend Framework**: FastAPI
+- **Database**: PostgreSQL
+- **ORM**: SQLAlchemy
+- **Message Broker**: Kafka
+- **Monitoring and Observability**: Prometheus, Grafana, OpenTelemetry, Jaeger
+- **Authentication**: Keycloak
+- **Containerization**: Docker Compose
+
+---
+
+## Installation
+```bash
+# Clone the repository
+$ git clone https://github.com/your-repo/monolith-ecommerce.git
+$ cd monolith-ecommerce
+
+# Start the application
+$ docker-compose up --build
+```
+
+### Access Services
+- **API Gateway**: [http://localhost:8084](http://localhost:8084)
+- **Keycloak**: [http://localhost:8080](http://localhost:8080)
+- **Grafana**: [http://localhost:3000](http://localhost:3000)
+- **Prometheus**: [http://localhost:9090](http://localhost:9090)
+- **Jaeger**: [http://localhost:16686](http://localhost:16686)
+
+---
+
+## Services Breakdown
+
+### Authentication Service
+- **Path**: `./auth-service`
+- **Description**: Manages user authentication and roles using Keycloak.
+- **Database**: PostgreSQL with SQLAlchemy ORM.
+- **Port**: `8088`
+
+### Product Service
+- **Path**: `./product-service`
+- **Description**: Get all products.
+- **Database**: PostgreSQL with SQLAlchemy ORM.
+- **Port**: `8081`
+
+### Order Service
+- **Path**: `./order-service`
+- **Description**: Create Order and send emails to the customer to apache kafka
+- **Database**: PostgreSQL with SQLAlchemy ORM.
+- **Port**: `8082`
+
+### Email Service
+- **Path**: `./email-service`
+- **Description**: Sends emails to the customer to apache kafka
+- **Dependencies**: Kafka for message queueing.
+- **Port**: `8083`
+
+---
+
+## Observability and Monitoring
+- **Prometheus**: Collects metrics from all services and Kafka.
+- **Grafana**: Visualizes collected metrics with dashboards.
+- **Jaeger**: Traces requests across services for debugging.
+- **OpenTelemetry**: Ensures consistent telemetry data across services.
+
+---
+
+## Visualizations
 ### Jaeger UI in grafana
 ![Jaeger](./images/jaeger.png)
 
 ### Prometheus in grafana
 
 ![Prometheus](./images/promethus.png)
-
-
-
-
-
-
-
 
 
 
